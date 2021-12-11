@@ -16,19 +16,19 @@ public class Main {
             String enteredValue = mainMenu();
             switch (enteredValue){
                 case "1":
-                    reportUtils.firstOperation();
+                    reportUtils.readingMonthlyReportFiles();
                     break;
                 case "2":
-                    reportUtils.secondOperation();
+                    reportUtils.readingYearlyReportFiles();
                     break;
                 case "3":
-                    reportUtils.thirdOperation();
+                    reportUtils.CheсkYearlyAndMonthlyReports();
                     break;
                 case "4":
-                    reportUtils.fourthOperation();
+                    reportUtils.printInformationMonthlyReports();
                     break;
                 case "5":
-                    reportUtils.fifthOperation();
+                    reportUtils.printInformationYearlyReports();
                     break;
                 case "6":
                     System.out.println("Завершение программы");

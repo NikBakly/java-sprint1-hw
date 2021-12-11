@@ -50,17 +50,17 @@ public class ReportUtils {
         }
     }
 
-    public void firstOperation(){
+    public void readingMonthlyReportFiles(){
         monthlyReports.put("January", new MonthlyReport("resources\\m.202101.csv", this));
         monthlyReports.put("February", new MonthlyReport("resources\\m.202102.csv", this));
         monthlyReports.put("March", new MonthlyReport("resources\\m.202103.csv", this));
     }
 
-    public void secondOperation(){
+    public void readingYearlyReportFiles(){
         yearlyReports.put(2021, new YearlyReport("resources\\y.2021.csv", this));
     }
 
-    public void thirdOperation(){
+    public void CheсkYearlyAndMonthlyReports(){
         boolean flag = false;
         for (String month : monthlyReports.keySet()) {
             int sumYearlyExpenses = 0;
@@ -120,7 +120,7 @@ public class ReportUtils {
         }
     }
 
-    public void fourthOperation(){
+    public void printInformationMonthlyReports(){
         for (String month :
                 monthlyReports.keySet()) {
             String monthRussian = getMonthForWord(month);
@@ -158,7 +158,7 @@ public class ReportUtils {
         }
     }
 
-    public void fifthOperation(){
+    public void printInformationYearlyReports(){
         for (int year :
                 yearlyReports.keySet()) {
             System.out.println("Год: " + year);
