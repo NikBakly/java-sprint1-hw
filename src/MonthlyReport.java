@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -10,14 +9,13 @@ public class MonthlyReport {
 
     public MonthlyReport(String path, ReportUtils reportUtils) {
         this.reportUtils = reportUtils;
-        if (reportUtils.readFileContentsOrNullMonthlyReport(path) != null) {
+        if (Files.exists(Path.of(path))) {
             String[] lines = reportUtils.readFileContentsOrNullMonthlyReport(path).split("\r\n");
             for (int i = 1; i < lines.length; ++i) {
                 this.lineContentsMonthlyReports.add(new Product(lines[i].split(",")));
             }
         }
     }
-
 
     public List<Product> getLineContentsMonthlyReports() {
         return lineContentsMonthlyReports;
